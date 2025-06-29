@@ -14,20 +14,32 @@ const AddTransaction = () => {
   };
 
   return (
-    <>
-      <h3>Add new transaction</h3>
-      <form onSubmit={onSubmit}>
-        <div>
-          <label>Text</label>
-          <input type="text" value={text} onChange={e => setText(e.target.value)} required />
-        </div>
-        <div>
-          <label>Amount (negative = expense, positive = income)</label>
-          <input type="number" value={amount} onChange={e => setAmount(e.target.value)} required />
-        </div>
-        <button type="submit">Add transaction</button>
-      </form>
-    </>
+  <>
+  <h3>Add new transaction</h3>
+  <form onSubmit={onSubmit}>
+    <div>
+      <label>Transaction Description</label>
+      <input
+        type="text"
+        value={text}
+        onChange={e => setText(e.target.value)}
+        placeholder="e.g., Grocery shopping"
+        required
+      />
+    </div>
+    <div>
+      <label>Amount (negative = expense, positive = income)</label>
+      <input
+        type="number"
+        value={amount}
+        onChange={e => setAmount(e.target.value)}
+        required
+      />
+    </div>
+    <button type="submit">Add transaction</button>
+  </form>
+</>
+
   );
 };
 export default AddTransaction;
